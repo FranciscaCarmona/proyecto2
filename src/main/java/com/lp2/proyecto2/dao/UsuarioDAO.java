@@ -18,6 +18,20 @@ public interface UsuarioDAO extends CrudRepository<Usuario, Integer> {
    @Override
     public List<Usuario> findAll(); 
 
+    @Override
+    public Optional<Usuario> findById(Integer id);
+
+    
+
+    
+
+
+
+   
+
+    
+    
+    
 
    
 }

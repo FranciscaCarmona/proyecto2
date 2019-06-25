@@ -38,4 +38,9 @@ public class TipoServicioController {
         return "/TipoServicio";
     }
     
+    @GetMapping("/principal")
+    public String mostrarPrincipal(Model model){
+        return"/Principal";
+    } 
+    
 }

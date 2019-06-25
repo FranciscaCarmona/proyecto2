@@ -10,7 +10,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="proyecto.css">
+  <link rel="stylesheet" href="../CSS/proyecto.css">
 </head>
 
 <body>
@@ -26,22 +26,24 @@
 
 
      
-      <div class="index" form >
+      <div class="index" form th:action="@{/index}" th:object="u" method="post" >
         <h4 class="centrar">INICIAR SESIÓN</h4>
         <div class="form-group  form-usuario">
           <label for="exampleInputEmail1">Email</label>
-          <input type="text" class="form-control" id="exampleInputEmail1">
+          <input type="text" class="form-control" id="exampleInputEmail1" th:field="*{email}">
 
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Contraseña</label>
-          <input type="password" class="form-control">
+          <input type="password" class="form-control" th:field="*{password}"maxlength="8" >
 
         </div>
 
 
-        <button type="submit" class="btn btn-secondary">Iniciar Sesión</button>
-        <a href="/index/crearusuario" class="btn btn-secondary" >Registrar</a>
+        <a href="principal" class="btn btn-secondary">Iniciar Sesión</button>
+        <a href="CrearUsuario" class="btn btn-secondary">Registrar</a>
+        
+        
       </form>
 
     </div>
