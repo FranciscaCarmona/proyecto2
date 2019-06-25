@@ -20,14 +20,14 @@ public class TipoServicioController {
     @Autowired
     private TipoServicioDAO tsDao;
     
-    @GetMapping("/manicure")
-    public String mostrarTipos (Model model){
-        
-        List<TipoDeServicio> list = tsDao.findByIdServicio_IdServicio(2);
-        model.addAttribute("listamanicure",list);
-      
-        return "/manicure";
-    }
+//    @GetMapping("//tipos_servicio/2")
+//    public String mostrarTipos (Model model){
+//        
+//        List<TipoDeServicio> list = tsDao.findByIdServicio_IdServicio(2);
+//        model.addAttribute("listamanicure",list);
+//      
+//        return "/TipoServicio";
+//    }
     
     @GetMapping("/tipos_servicio/{id}")
     public String mostrarTipos (Model model, @PathVariable("id") Integer id){
@@ -35,7 +35,7 @@ public class TipoServicioController {
         List<TipoDeServicio> list = tsDao.findByIdServicio_IdServicio(id);
         model.addAttribute("listamanicure",list);
       
-        return "/manicure";
+        return "/TipoServicio";
     }
     
 }
