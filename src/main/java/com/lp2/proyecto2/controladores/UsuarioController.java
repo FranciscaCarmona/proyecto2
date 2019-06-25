@@ -21,27 +21,32 @@ public class UsuarioController {
     @Autowired
     UsuarioDAO uDAO;
     
-    @GetMapping("/index/crearusuario")
+    @GetMapping("/CrearUsuario")
     public String mostrarFormulario(Model model){
         model.addAttribute("nuevoUsuario", new Usuario());  //quiero enviar un usuario vacio a la vista (crear Usuario)
-        return "CrearUsuario";
+        return "/CrearUsuario";
     }
     
     
-    @PostMapping("/index/crearuuario")
+    @PostMapping("/index")
     public String crearUsuario(@ModelAttribute Usuario usuario){
         
         uDAO.save(usuario);
-        return "index";
+        return "/index";
         
     }   
+//    @GetMapping("/index")
+//    public String iniciarSesión(@ModelAttribute Usuario usuario){
+//        uDAO.existsById(Integer.SIZE);
+//                return"/Principal";
+//    }
     @GetMapping("/index")
-    public String iniciarSesión(@ModelAttribute Usuario usuario){
-        uDAO.existsById(Integer.SIZE);
-                return"Principal";
+    public String login(Model model){
+        model.addAttribute("eq", new Usuario());
+        return "/index";
     }
     
-    cambio ql
+    
     
     
     
