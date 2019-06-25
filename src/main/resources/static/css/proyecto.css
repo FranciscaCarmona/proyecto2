@@ -1,0 +1,45 @@
+.container-fluid{
+    background-color: #b3d7ff;
+}
+
+
+.encabezado{
+    text-align: center;
+    background-color: b3d7ff;
+}
+.index{
+    background-color:rgba(0,123,255,.25) ;
+    margin:3%;
+    border-radius: 10px;
+    padding: 6%;
+}
+.centrar{
+    text-align: center;
+}
+.jumbotron{
+    background-color: #a72892a6;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+
+
+}
+.link-seccion{
+    
+    background-color: b3d7ff ;
+
+    }
+    .link-seccion:hover{
+        background-color: rgb(48, 196, 196);
+        
+    }
+    
+.fondo{
+    background-image: url(fondoprincipal.jpg);
+    width: 100%;
+    height: 100%;
+}
+.encabezado{
+    background-color: whitesmoke;
+
+}
