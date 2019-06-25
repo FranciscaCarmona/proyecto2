@@ -21,16 +21,22 @@ public class UsuarioController {
     @Autowired
     UsuarioDAO uDAO;
     
-    @GetMapping("/CrearUsuario")
+    @GetMapping("/index/crearusuario")
     public String mostrarFormulario(Model model){
-        model.addAttribute("usuario", new Usuario());  //quiero enviar un usuario vacio a la vista (crear Usuario)
+        model.addAttribute("nuevoUsuario", new Usuario());  //quiero enviar un usuario vacio a la vista (crear Usuario)
         return "CrearUsuario";
     }
     
-    @PostMapping("/guardarUsuario")
-    public String guardaUsuario(@ModelAttribute Usuario usuario){
+    
+    @PostMapping("/index/crearuuario")
+    public String crearUsuario(@ModelAttribute Usuario usuario){
         
         uDAO.save(usuario);
-        return "exito";
-    }    
+        return "Principal";
+        
+    }   
+    
+    
+    
+    
 }

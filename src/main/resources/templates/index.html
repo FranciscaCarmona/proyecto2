@@ -26,7 +26,7 @@
 
 
 
-      <div class="index" form >
+      <div class="index" form th:action="@{/index}" th:object="${}" method="post">
         <h4 class="centrar">INICIAR SESIÓN</h4>
         <div class="form-group  form-usuario">
           <label for="exampleInputEmail1">Email</label>
@@ -41,6 +41,7 @@
 
 
         <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        <a href="/index/crearusuario" class="btn btn-primary" >Registrar</a>
       </form>
 
 

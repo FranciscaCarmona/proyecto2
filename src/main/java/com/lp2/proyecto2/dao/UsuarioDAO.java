@@ -7,6 +7,7 @@ package com.lp2.proyecto2.dao;
 
 import com.lp2.proyecto2.modelo.Usuario;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -16,4 +17,14 @@ import org.springframework.data.repository.CrudRepository;
 public interface UsuarioDAO extends CrudRepository<Usuario, Integer> {
    @Override
     public List<Usuario> findAll(); 
+
+
+   
 }
+    
+   
+
+   
+    
+    
+
