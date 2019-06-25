@@ -32,9 +32,14 @@ public class UsuarioController {
     public String crearUsuario(@ModelAttribute Usuario usuario){
         
         uDAO.save(usuario);
-        return "Principal";
+        return "index";
         
     }   
+    @GetMapping("/index")
+    public String iniciarSesión(@ModelAttribute Usuario usuario){
+        uDAO.existsById(Integer.SIZE);
+                return"Principal";
+    }
     
     
     
