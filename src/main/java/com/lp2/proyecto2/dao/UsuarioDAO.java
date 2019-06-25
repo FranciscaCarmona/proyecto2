@@ -15,16 +15,13 @@ import org.springframework.data.repository.CrudRepository;
  * @author Francisca Carmona
  */
 public interface UsuarioDAO extends CrudRepository<Usuario, Integer> {
-   @Override
-    public List<Usuario> findAll(); 
 
+    @Override
+    public List<Usuario> findAll();
 
-   
+    @Override
+    public Optional<Usuario> findById(Integer id);
+    
+    public Optional<Usuario> findByEmail(String email);
+
 }
-    
-   
-
-   
-    
-    
-

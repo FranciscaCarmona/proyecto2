@@ -8,19 +8,19 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   <link rel="stylesheet" href="proyecto.css">
+   <link rel="stylesheet" href="../CSS/proyecto.css" >
         </head>
   <body>
         <div class="container-fluid ">
                 <div class="row justify-content-center" >
-        <table class="table">
+        <table class="table" >
                 <thead class="thead-dark">
                   <tr>
                     <th>Nombre</th>
                     <th>Id</th>
                     <th>Precio</th>
                     <th>Descripción</th>
-                    
+                    <th>Contactar</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -29,7 +29,8 @@
                     <td th:text="${l.getIdTipoServicio()}"></td>
                     <td th:text="${l.getPrecio()}"></td>
                     <td th:text="${l.getDescripcion()}"></td>
-                    
+                    <td>  <a href=""class="btn btn-secondary"> Consulta</a></td>   <!-- 1ra idea: agregar bonotes redirigiendo a una pestaña nueva que contenga los datos del usuario que ofrece el servicio seleccionado-->
+                                <!-- 2da idea: que aparezcan los emails del usuario que ofrece el servicio -->
                   </tr>
                   
                 </tbody>
