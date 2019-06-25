@@ -23,53 +23,49 @@ import org.springframework.web.bind.annotation.PostMapping;
  */
 @Controller
 public class UsuarioController {
+
     @Autowired
     UsuarioDAO uDAO;
-    
+
     @GetMapping("/CrearUsuario")
-    public String mostrarFormulario(Model model){
+    public String mostrarFormulario(Model model) {
         model.addAttribute("nuevoUsuario", new Usuario()); //quiero enviar un usuario vacio a la vista (crear Usuario)
         return "/CrearUsuario";
     }
-    
-    
-    
+
     @PostMapping("/CrearUsuario")
-    public String crearUsuario(@ModelAttribute Usuario usuario){
-        
+    public String crearUsuario(@ModelAttribute Usuario usuario) {
+
         uDAO.save(usuario);
         return "/CrearUsuario";
-        
-    }   
 
-    @GetMapping("/index")
-    public String login(Model model ){
-       
+    }
+
+    @GetMapping("/")
+    public String login(Model model) {
+        model.addAttribute("u", new Usuario());
         return "/index";
     }
-    
-    
-   @PostMapping("/index")
-   public void login(@ModelAttribute Usuario usuario, Model model,HttpServletResponse response) throws IOException {
-       model.addAttribute("incorrecto", false);
-       String email = usuario.getEmail();
-       String password = usuario.getPassword();
-       int pass = Integer.parseInt(password);
-        Optional<Usuario> u = uDAO.findById(pass);
-       if(u!= null){
-           response.sendRedirect("/Principal");
-           }
-               else{
-           model.addAttribute("Incorrecto",true);
-           response.sendRedirect("/index");
-           
-       }
-       
-   }
-   
-   
-    
-    
-    
-    
+
+    @PostMapping("/")
+    public String login(@ModelAttribute Usuario usuario, Model model, HttpServletResponse response) throws IOException {
+        model.addAttribute("incorrecto", false);
+        String email = usuario.getEmail();
+        String password = usuario.getPassword();
+
+        Optional<Usuario> optional = uDAO.findByEmail(email);
+        if (optional.isPresent()) {
+            Usuario usuarioBD = optional.get();
+            
+            response.sendRedirect("/Principal");
+        } else {
+            model.addAttribute("Incorrecto", true);
+            
+            return "/index";
+
+        }
+
+        return null;
+    }
+
 }
